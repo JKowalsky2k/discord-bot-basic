@@ -9,11 +9,13 @@ from discord.ext.commands import Bot
 
 # enter bot TOKEN here
 # podaj tutaj TOKEN swojego bot'a
-TOKEN = 'NjkxNjczMTAyNDUwNjg4MDkx.XnkGWA._m4PK5bMP5n8TguYozFIgzVANBs'
+TOKEN = 'NjkxNjczMTAyNDUwNjg4MDkx.XoD05A.Hz0Fu3LGtlMi_LLAEW63WWTPXxA'
 
 #	bot command prefix
 # 	znak wywolania funkcji bot'a
 BOT_PREFIX = ("$")
+BOT_NAME = ("PwrBot")
+BOT_DESCRIPTION = ("Unofficial bot")
 bot = commands.Bot(command_prefix=BOT_PREFIX)
 
 @bot.event
@@ -28,7 +30,7 @@ async def on_ready():
 # wypisuje podstawowe informacje na temat bot'a
 @bot.command(pass_context=True)
 async def info(ctx):
-	embed = discord.Embed(title="PwrBot", description="Unofficial PwrBot")
+	embed = discord.Embed(title=BOT_NAME, description=BOT_DESCRIPTION)
 	await ctx.send(embed=embed)
 
 # print informations about basic bot commands with short info
@@ -48,6 +50,8 @@ async def pomoc(ctx):
 # ponezej znajduje sie kilka komend bota
 @bot.command(pass_context=True)
 async def szkaluj(ctx, member : discord.Member):
+	# can be chenged (list)
+	# poze byc zmienione (list)
 	zwrotySzkalujace = 	['{0} ma małego',
 					 	'{0} ogaląda Zelenta',
 					 	'{0} zapomniał o N',
