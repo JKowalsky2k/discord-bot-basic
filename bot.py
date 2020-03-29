@@ -9,7 +9,7 @@ from discord.ext.commands import Bot
 
 # enter bot TOKEN here
 # podaj tutaj TOKEN swojego bot'a
-TOKEN = 'NjkxNjczMTAyNDUwNjg4MDkx.XoD05A.Hz0Fu3LGtlMi_LLAEW63WWTPXxA'
+TOKEN = "NjkxNjczMTAyNDUwNjg4MDkx.XoD77Q.gPvS46EleKLM7w5K7seGfT75M4I"
 
 #	bot command prefix
 # 	znak wywolania funkcji bot'a
@@ -76,4 +76,7 @@ async def urodziny(ctx, member : discord.Member):
 async def kick(ctx, user: discord.Member):
 		await ctx.message.guild.kick(user,reason = "XD")
 
-bot.run(TOKEN)
+try:
+    bot.run(TOKEN)
+except discord.errors.LoginFailure as e:
+    print("Login unsuccessful.")
