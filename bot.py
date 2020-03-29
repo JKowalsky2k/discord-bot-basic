@@ -1,9 +1,18 @@
+'''
+Bot wrote for fun.
+Bot napisany jako konkurencja dla innego bot'a :p
+'''
+
 import discord, random
 from discord.ext import commands
 from discord.ext.commands import Bot
 
+# enter bot TOKEN here
+# podaj tutaj TOKEN swojego bot'a
 TOKEN = 'NjkxNjczMTAyNDUwNjg4MDkx.XnkGWA._m4PK5bMP5n8TguYozFIgzVANBs'
 
+#	bot command prefix
+# 	znak wywolania funkcji bot'a
 BOT_PREFIX = ("$")
 bot = commands.Bot(command_prefix=BOT_PREFIX)
 
@@ -15,11 +24,15 @@ async def on_ready():
 	print ("Discord Version: " + discord.__version__)
 	print ("------------------------------------")
 
+# print basic info about bot
+# wypisuje podstawowe informacje na temat bot'a
 @bot.command(pass_context=True)
 async def info(ctx):
 	embed = discord.Embed(title="PwrBot", description="Unofficial PwrBot")
 	await ctx.send(embed=embed)
 
+# print informations about basic bot commands with short info
+# wypisuje komendy jakie posiada bot z krotkim opisem
 @bot.command(pass_context=True)
 async def pomoc(ctx):
 	embed = discord.Embed(title="Tomasz Kolęda")
@@ -31,10 +44,8 @@ async def pomoc(ctx):
 	embed.add_field(name="$pomoc", value="Wypisuje podstawowe komendy", inline=False)
 	await ctx.send(embed=embed)
 
-@bot.command(pass_context=True)
-async def ping(ctx, member : discord.Member):
-	await ctx.send(member.mention)
-
+# below there are some bot commands
+# ponezej znajduje sie kilka komend bota
 @bot.command(pass_context=True)
 async def szkaluj(ctx, member : discord.Member):
 	zwrotySzkalujace = 	['{0} ma małego',
